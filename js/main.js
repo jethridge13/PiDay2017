@@ -73,7 +73,7 @@ function mainLoop(i) {
             coprime++;
         }
         estimate = Math.sqrt(6/(coprime/(coprime+cofactor)));
-        difference = Math.abs(Math.PI/estimate);
+        difference = Math.abs((Math.PI-estimate)/Math.PI)*100;
         updateCo();
         // Update page with math
         document.getElementById("number1").innerHTML = one;
