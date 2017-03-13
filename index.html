@@ -36,15 +36,78 @@
 
     <div id="sidenav" class="sidenav">
         <style>
-            p{
-                color:white;
+            p, h3{
+                color:graytext;
             }
         </style>
         <a href="javascript:void(0)" onclick="closeNav()">Close</a>
+        <a href="https://www.youtube.com/watch?v=RZBhSi_PwHU">Inspiration and More Info</a>
+        <p>This website was made after viewing Matt Parker's Pi Day 2017 video on 
+            using random numbers to estimate Pi.</p>
+        <p>To see the proof and a much more in-depth explanation, click the link above.</p>
+        <p>The quick version: The probability of two random numbers being coprime is
+            6/pi^2. For a set of random number rolls, the ratio of coprimes to cofactors
+            can be denoted as X. This means that (approximately) X = (6/pi^2). Using 
+            basic algebra, we can rearrange this to get pi = sqrt(6/x).</p>
+        <p>In conclusion, we can use a bunch of random numbers to estimate Pi.</p>
+        <h3>HAPPY PI DAY!</h3>
     </div>
-
     <div class="container-fluid">
-        
+        <div class='row'>
+            <div class='col-lg-6'>
+                <h3>Random Numbers</h3>
+                <span id='number1'>0</span>
+                <span id='number2'>0</span>
+            </div>
+            <div class='col-lg-3'>
+                <h3>Coprime</h3>
+                <div id='coprime'><h3>0</h3></div>
+            </div>
+            <div class='col-lg-3'>
+                <h3>Cofactor</h3>
+                <div id='cofactor'><h3>0</h3></div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-6'>
+                <h3>Pi</h3>
+                <div id='pi'><h3>3.14</h3></div>
+            </div>
+            <div class='col-lg-3'>
+                <h3>Estimate</h3>
+                <div id='estimate'></div>
+            </div>
+            <div class="col-lg-3">
+                <h3>Difference (%)</h3>
+                <div id='difference'></div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-lg-1'>
+                <div class='form-group'>
+                    <label for="rounds">Number of Rounds:</label>
+                    <input type="text" class="form-control" id="rounds" 
+                           onblur="updateRounds()">
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <div class="form-group">
+                    <label for="max">Max Random Number</label>
+                    <input type="text" class="form-control" id="max"
+                           onblur="updateMax()">
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <h4>Execution Speed</h4>
+                <input type="range" id="range" min="1" max="1000" onchange="updateSpeed()">
+            </div>
+            <div class="col-lg-1">
+                <button class="btn btn-default" id="start" onclick="start()">Start</button>
+            </div>
+            <div class="col-lg-1">
+                <button class="btn btn-default" id="stop" onclick="stop()" disabled>Stop</button>
+            </div>
+        </div>
     </div>
 
     <hr>

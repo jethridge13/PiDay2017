@@ -47,3 +47,13 @@
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
+.row{
+    padding-top: 3%;
+    padding-left: 3%
+}
+
+#number1, #number2{
+    padding-left: 5%;
+    font-size: 30px;
+}
